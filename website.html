@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMODELERS NEPAL | Complete Construction & Design Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;         /* blue-600 */
+            --secondary: #38bdf8;       /* sky-400 */
+            --light: #f0f6ff;           /* very light blue */
+            --dark: #0f172a;            /* slate-900 */
+            --accent: #60a5fa;          /* blue-400 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        header {
+            background-color: #e0edff; /* lighter blue */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: box-shadow 0.3s, background 0.3s;
+        }
+        
+        header.sticky {
+            background: rgba(224,237,255,0.95);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2.5%; /* adjust from 5% to 2.5% for more space */
+            position: relative;
+            min-height: 44px;
+        }
+        .logo {
+            font-size: 1.1rem; /* further reduced */
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .logo span {
+            color: var(--secondary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            transition: right 0.3s;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .cta-button {
+            background-color: var(--secondary);
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        /* Hamburger styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            z-index: 1201;
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: var(--primary);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: block;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 0.5rem 1.5%; /* adjust from 3% to 1.5% */
+                min-height: 44px;
+                position: relative;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                height: 100vh;
+                width: 80vw; /* reduce width for better usability */
+                max-width: 320px;
+                background: #fff;
+                box-shadow: -2px 0 24px rgba(0,0,0,0.10);
+                border-top-left-radius: 18px;
+                border-bottom-left-radius: 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 5rem 1.2rem 2rem 1.2rem;
+                gap: 1.5rem;
+                z-index: 1200;
+                transition: right 0.35s cubic-bezier(.23,1.01,.32,1);
+            }
+            .nav-links.open {
+                right: 0;
+            }
+            .cta-button {
+                margin-left: 0;
+            }
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 0.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        @media (max-width: 600px) {
+            html {
+                font-size: 15px;
+                scroll-behavior: smooth;
+            }
+            body {
+                padding-bottom: 60px;
+                background: #f8f1e5;
+            }
+            header {
+                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            }
+            .navbar {
+                flex-direction: row;
+                gap: 0;
+                padding: 0.2rem 0.5rem;
+                min-height: 40px;
+                position: relative;
+                background: #fff;
+                border-bottom: 1px solid #f2a15422;
+            }
+            .logo {
+                font-size: 1.05rem;
+                margin-right: auto;
+                letter-spacing: 0.5px;
+            }
+            .cta-button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.98rem;
+                border-radius: 22px;
+                margin-left: 0.5rem;
+                box-shadow: 0 2px 6px rgba(242,161,84,0.07);
+            }
+            .hamburger {
+                width: 32px;
+                height: 32px;
+                right: 0.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .hamburger span {
+                height: 3px;
+                margin: 4px 0;
+            }
+            .nav-links {
+                left: auto; /* fix: remove left: 0 */
+                right: -100vw; /* ensure hidden by default */
+                width: 80vw; /* reduce width for better usability */
+                max-width: 320px;
+                padding: 5rem 1.2rem 2rem 1.2rem;
+                background: #fff;
+                box-shadow: -2px 0 24px rgba(0,0,0,0.10);
+                border-top-left-radius: 18px;
+                border-bottom-left-radius: 18px;
+                position: fixed;
+                top: 0;
+                height: 100vh;
+                z-index: 1200;
+                transition: right 0.35s cubic-bezier(.23,1.01,.32,1);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .nav-links.open {
+                right: 0;
+            }
+            .hero {
+                min-height: 60vh;
+                padding: 1.5rem 3% 1.5rem 3%;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+                background-position: 60% 40%;
+                border-radius: 0 0 18px 18px;
+            }
+            .hero-content {
+                max-width: 100%;
+                margin: 0 auto;
+                background: rgba(58,79,65,0.08);
+                border-radius: 12px;
+                padding: 1.2rem 0.7rem;
+                box-shadow: 0 2px 8px rgba(58,79,65,0.04);
+            }
+            .hero h1 {
+                font-size: 1.25rem;
+                margin-bottom: 0.7rem;
+            }
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.2rem;
+            }
+            .section-title h2, .budget-title h2 {
+                font-size: 1.08rem;
+                margin-bottom: 0.5rem;
+            }
+            .section-title p, .budget-title p {
+                font-size: 0.97rem;
+            }
+            .calculator-container, .services-section, .calculator-section, .testimonials-section, .announcement-section, .budget-interior-section {
+                padding: 1rem 2% 1rem;
+                border-radius: 12px;
+                margin-bottom: 1.2rem;
+                background: #fff;
+                box-shadow: 0 2px 10px rgba(58,79,65,0.04);
+            }
+            .calculator-tabs {
+                flex-direction: column;
+                gap: 0.5rem;
+                border-bottom: none;
+                margin-bottom: 1.2rem;
+            }
+            .tab {
+                padding: 0.7rem 1rem;
+                font-size: 1rem;
+                border-radius: 8px;
+                border-bottom: none;
+                background: #f8f1e5;
+                margin-bottom: 0.3rem;
+            }
+            .tab.active {
+                background: #f2a154;
+                color: #fff;
+                border-bottom: none;
+            }
+            .calculator-form {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .form-group label {
+                font-size: 0.98rem;
+            }
+            .form-group input, .form-group select {
+                font-size: 0.97rem;
+                padding: 0.7rem;
+                border-radius: 6px;
+            }
+            .calculator-results {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.2rem;
+                font-size: 1rem;
+                gap: 0.7rem;
+            }
+            .result-value {
+                font-size: 1.2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .service-card {
+                min-width: 0;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(58,79,65,0.04);
+            }
+            .service-img {
+                height: 110px;
+                border-radius: 10px 10px 0 0;
+            }
+            .service-content {
+                padding: 1rem;
+            }
+            .service-content h3 {
+                font-size: 1.08rem;
+                margin-bottom: 0.5rem;
+            }
+            .service-content p {
+                font-size: 0.97rem;
+                margin-bottom: 1rem;
+            }
+            .testimonials-section {
+                padding: 1.2rem 2% 1.2rem;
+            }
+            .testimonials-title h2 {
+                font-size: 1.08rem;
+            }
+            .testimonials-carousel {
+                max-width: 100%;
+                min-width: 0;
+            }
+            .testimonial {
+                padding: 1.2rem 0.7rem;
+                font-size: 0.98rem;
+                min-height: 120px;
+                border-radius: 10px;
+            }
+            .carousel-controls {
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            .announcement-section {
+                padding: 1.2rem 2% 1.2rem;
+                border-radius: 12px;
+            }
+            .announcement-grid {
+                gap: 1rem;
+            }
+            .announcement-card {
+                padding: 1rem 0.5rem 0.8rem;
+                border-radius: 10px;
+            }
+            .announcement-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+                margin-bottom: 0.7rem;
+            }
+            .announcement-card h3 {
+                font-size: 1rem;
+                margin-bottom: 0.4rem;
+            }
+            .announcement-card p {
+                font-size: 0.95rem;
+            }
+            .budget-interior-section {
+                padding: 1.2rem 2% 1.2rem;
+                border-radius: 12px;
+            }
+            .budget-title h2 {
+                font-size: 1.08rem;
+            }
+            .budget-carousel {
+                max-width: 100vw;
+                min-height: 180px;
+            }
+            .budget-slide {
+                gap: 0.7rem;
+                padding: 0.7rem;
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 100%;
+                border-radius: 10px;
+            }
+            .budget-slide img {
+                width: 100%;
+                height: 90px;
+                margin-bottom: 0.5rem;
+                border-radius: 8px;
+            }
+            .budget-info h3 {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+            .budget-info p {
+                font-size: 0.95rem;
+                margin-bottom: 0.3rem;
+            }
+            .budget-price {
+                font-size: 1rem;
+            }
+            .budget-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+                margin: 0 0.3rem;
+            }
+            .budget-dots {
+                gap: 0.5rem;
+                margin-top: 1rem;
+            }
+            .budget-dot {
+                width: 10px;
+                height: 10px;
+            }
+            .budget-note, .budget-disclaimer {
+                font-size: 0.95rem;
+                padding: 0.6rem 0.7rem;
+                margin: 1rem auto 0 auto;
+                border-radius: 8px;
+                max-width: 95vw;
+                box-shadow: 0 1px 4px rgba(242,161,84,0.06);
+            }
+            .budget-note {
+                margin-top: 1.2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0.7rem 0;
+            }
+            .footer-col h3 {
+                font-size: 1rem;
+                margin-bottom: 0.7rem;
+            }
+            .footer-col p, .footer-col a {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+            .social-links a {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+            .copyright {
+                font-size: 0.85rem;
+                padding-top: 1rem;
+            }
+            #backToTop {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+                bottom: 18px;
+                right: 18px;
+            }
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(37,99,235,0.45), rgba(56,189,248,0.35)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: #fff;
+        }
+        
+        /* Animate hero content */
+        .hero-content {
+            animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .calculator-section {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .calculator-container {
+            background-color: #e0edff;
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+        
+        .calculator-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #b6d4fe;
+        }
+        
+        .tab {
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2563eb;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            background: #e0edff;
+        }
+        
+        .tab:not(.active):hover {
+            color: var(--accent);
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .calculator-results {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            grid-column: span 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 120px;
+            transition: background 0.3s;
+        }
+        
+        .calculator-results.animated {
+            animation: pulseResult 0.7s;
+        }
+        @keyframes pulseResult {
+            0% { background: var(--primary);}
+            50% { background: var(--accent);}
+            100% { background: var(--primary);}
+        }
+        
+        .result-value {
+            color: var(--secondary);
+        }
+        
+        .services-section {
+            background-color: #e0edff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: #f0f6ff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(40px);
+            position: relative;
+        }
+        
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Testimonials Carousel */
+        .testimonials-section {
+            background: #e0edff;
+            padding: 5rem 5%;
+        }
+        .testimonials-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .testimonials-carousel {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .testimonial {
+            background: #f0f6ff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 2rem 2.5rem;
+            text-align: center;
+            min-height: 180px;
+            opacity: 0;
+            transform: scale(0.97);
+            transition: opacity 0.5s, transform 0.5s;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        .testimonial.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+            position: relative;
+        }
+        .testimonial .stars {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .testimonial .author {
+            margin-top: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .carousel-dot.active {
+            background: var(--secondary);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-col p, .footer-col a {
+            color: #ddd;
+            margin-bottom: 1rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(224,237,255,0.13);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 2000;
+        }
+        #backToTop.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Announcement Section */
+        .announcement-section {
+            background: #e0edff;
+            padding: 3rem 5% 2rem;
+            margin-bottom: 0;
+        }
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .announcement-card {
+            background: #f0f6ff;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            padding: 2rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .announcement-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+        }
+        .announcement-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .announcement-card h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+        }
+        .announcement-card p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        /* Responsive for announcement section */
+        @media (max-width: 700px) {
+            .announcement-section {
+                padding: 2rem 2% 1rem;
+            }
+            .announcement-grid {
+                gap: 1.2rem;
+            }
+            .announcement-card {
+                padding: 1.2rem 0.7rem 1rem;
+            }
+        }
+
+        /* Budget Interior Section */
+        .budget-interior-section {
+            background: #e0edff;
+            padding: 4rem 5% 3rem;
+            margin-bottom: 0;
+        }
+        .budget-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .budget-title h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+        }
+        .budget-title p {
+            color: #666;
+            font-size: 1.05rem;
+        }
+        .budget-carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .budget-carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 650px;
+            min-height: 340px;
+            position: relative;
+        }
+        .budget-slide {
+            background: #f0f6ff;
+            min-width: 100%;
+            opacity: 0;
+            transform: scale(0.97) translateX(40px);
+            transition: opacity 0.6s cubic-bezier(.23,1.01,.32,1), transform 0.6s cubic-bezier(.23,1.01,.32,1);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 1.5rem;
+            gap: 2rem;
+        }
+        .budget-slide.active {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+            position: relative;
+            z-index: 2;
+        }
+        .budget-slide img {
+            width: 220px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            background: #eee;
+        }
+        .budget-info {
+            flex: 1;
+            text-align: left;
+        }
+        .budget-info h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .budget-info p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 0.7rem;
+        }
+        .budget-price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .budget-arrow {
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin: 0 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+            z-index: 10;
+        }
+        .budget-arrow:hover {
+            background: var(--primary);
+        }
+        .budget-arrow:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+        .budget-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-top: 1.5rem;
+        }
+        .budget-dot {
+            background: #b6d4fe;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .budget-dot.active {
+            background: var(--secondary);
+        }
+        @media (max-width: 900px) {
+            .budget-carousel {
+                max-width: 98vw;
+                min-height: 260px;
+            }
+            .budget-slide img {
+                width: 120px;
+                height: 100px;
+            }
+            .budget-slide {
+                gap: 1rem;
+                padding: 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            html {
+                font-size: 14px;
+            }
+            body {
+                padding-bottom: 60px;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 3%;
+                position: relative;
+            }
+            .logo {
+                font-size: 1rem;
+                margin-right: auto;
+            }
+            .cta-button {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+            .hamburger {
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                right: 0.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 2rem 2% 2rem 2%;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .section-title h2, .budget-title h2 {
+                font-size: 1.1rem;
+            }
+            .calculator-container, .services-section, .calculator-section, .testimonials-section, .announcement-section, .budget-interior-section {
+                padding: 1.2rem 2% 1.2rem;
+            }
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+            .calculator-results, .cta-button[style*="grid-column"] {
+                grid-column: span 1 !important;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-img {
+                height: 120px;
+            }
+            .budget-slide {
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 100%;
+                padding: 0.7rem;
+            }
+            .budget-slide img {
+                width: 100%;
+                height: 120px;
+                margin-bottom: 0.7rem;
+            }
+            .budget-info {
+                text-align: left;
+            }
+            .budget-disclaimer-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+            .budget-disclaimer, .budget-note {
+                font-size: 0.93rem;
+                padding: 0.6rem 0.7rem;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .footer-col h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        .budget-disclaimer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1.7rem;
+            align-items: flex-start;
+        }
+        .budget-disclaimer, .budget-note {
+            background: #e0edff;
+            color: #2563eb;
+            box-shadow: 0 2px 8px rgba(56,189,248,0.07);
+            padding: 0.7rem 1.2rem;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            margin: 1.2rem auto 0 auto; /* center horizontally and add top margin */
+            justify-content: center;
+            text-align: center;
+        }
+        .budget-disclaimer i, .budget-note i {
+            margin-right: 0.5em;
+            color: var(--secondary);
+            font-size: 1.1em;
+        }
+        .budget-note {
+            background: #dbeafe;
+            color: #2563eb;
+            box-shadow: 0 2px 8px rgba(56,189,248,0.05);
+        }
+        .budget-note i {
+            color: #38bdf8;
+        }
+
+        /* What We Offer & Why Choose Us Section Styles */
+        .offer-section, .benefit-section {
+            border-radius: 18px;
+            margin: 2.5rem auto 0 auto;
+            box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+            transition: box-shadow 0.3s;
+        }
+        .offer-section:hover, .benefit-section:hover {
+            box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+        }
+        .offer-section h2, .benefit-section h2 {
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .offer-section h2::after, .benefit-section h2::after {
+            content: '';
+            display: block;
+            margin: 0.7rem auto 0 auto;
+            width: 60px;
+            height: 3px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+        }
+        .offer-section ul, .benefit-section ul {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem 2.5rem 2rem 2.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 12px rgba(56,189,248,0.06);
+        }
+        .offer-section ul li, .benefit-section ul li {
+            margin-bottom: 1.1em;
+            font-size: 1.13rem;
+            color: var(--dark);
+            padding-left: 0.2em;
+            transition: color 0.2s;
+        }
+        .offer-section ul li:last-child, .benefit-section ul li:last-child {
+            margin-bottom: 0;
+        }
+        .offer-section ul li::marker, .benefit-section ul li::marker {
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+        .benefit-section ul li strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        @media (max-width: 700px) {
+            .offer-section ul, .benefit-section ul {
+                padding: 1.1rem 0.7rem 1.1rem 1.1rem;
+                font-size: 1rem;
+            }
+            .offer-section, .benefit-section {
+                margin: 1.2rem 0 0 0;
+                border-radius: 12px;
+            }
+            .offer-section h2, .benefit-section h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Enhanced What We Offer Section */
+        .offer-grid {
+            margin-top: 0.5rem;
+        }
+        .offer-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(37,99,235,0.07);
+            padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: box-shadow 0.25s, transform 0.25s;
+            position: relative;
+            min-height: 260px;
+        }
+        .offer-card:hover {
+            box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .offer-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .offer-card h3 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+        .offer-card p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 900px) {
+            .offer-grid {
+                grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+                gap: 1.2rem;
+            }
+            .offer-card {
+                padding: 1.5rem 0.7rem 1.1rem 0.7rem;
+                min-height: 200px;
+            }
+            .offer-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+                margin-bottom: 0.7rem;
+            }
+            .offer-card h3 {
+                font-size: 1rem;
+            }
+            .offer-card p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #1e3a8a;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background-color: #f0f6ff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .card .icon {
+      color: #1e40af;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #1e3a8a;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1e3a8a;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    /* How We Work */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background-color: #f0f6ff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .card .icon {
+      color: #1e40af;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #1e3a8a;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Partners Slideshow */
+    .slider-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      width: calc(200px * 10);
+      animation: scroll 20s linear infinite;
+    }
+
+    .slider-track img {
+      width: 200px;
+      height: 100px;
+      object-fit: contain;
+      padding: 0 20px;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .slider-track img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* About Us */
+    .about {
+      background-color: #f0f6ff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .about h3 {
+      font-size: 28px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 17px;
+      color: #333;
+      line-height: 1.6;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">REMODELERS<span>NEPAL</span></div>
+            <a href="#calculator" class="cta-button" style="order:2;">Get Estimate</a>
+            <div class="hamburger" id="hamburgerMenu" aria-label="Open navigation" tabindex="0" style="order:3;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#calculator">Cost Calculator</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Your Space With Elegance</h1>
+            <p>From construction to renovation to interior design, we provide complete solutions to bring your vision to life with exceptional craftsmanship and innovative design.</p>
+            <a href="#contact" class="cta-button">Book Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Announcement/Offer Section -->
+    <section class="announcement-section">
+        <div class="announcement-grid">
+            <div class="announcement-card">
+                <div class="announcement-icon" style="background: var(--secondary);">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3>Special Summer Offer</h3>
+                <p>Get up to <strong>15% off</strong> on all renovation projects booked before July 31st. Transform your home for less!</p>
+            </div>
+            <div class="announcement-card">
+                <div class="announcement-icon" style="background: var(--accent);">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Fast Turnaround</h3>
+                <p>Guaranteed project completion in as little as <strong>45 days</strong> for select interior packages. Experience speed and quality!</p>
+            </div>
+            <div class="announcement-card">
+                <div class="announcement-icon" style="background: var(--primary);">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Free Consultation</h3>
+                <p>Book a <strong>free design consultation</strong> with our experts. No obligation, just inspiration for your dream space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Interior Section -->
+    <section class="budget-interior-section" id="budget-interior">
+        <div class="budget-title">
+            <h2>Budget Interior</h2>
+            <p>Choose from our most popular, affordable interior design layouts. Swipe or click to explore!</p>
+        </div>
+        <div class="budget-carousel-container">
+            <button class="budget-arrow left" id="budgetPrev"><i class="fas fa-chevron-left"></i></button>
+            <div class="budget-carousel" id="budgetCarousel">
+                <div class="budget-slide active">
+                    <img src="https://i.pinimg.com/736x/bb/af/bf/bbafbf3528bafb28a806219d04ef4a97.jpg" alt="Modern Minimalist Living" class="budget-img" />
+                    <div class="budget-info">
+                        <h3>Modern Minimalist Living</h3>
+                        <p>Clean lines, neutral tones, and smart storage for a clutter-free, stylish home at a budget price.</p>
+                        <span class="budget-price">Starting at ₹2.5L</span>
+                    </div>
+                </div>
+                <div class="budget-slide">
+                    <img src="https://i.pinimg.com/1200x/e9/35/51/e9355188dde93b7d5369fb69285a28dc.jpg" alt="Cozy Family Apartment" class="budget-img" />
+                    <div class="budget-info">
+                        <h3>Cozy Family Apartment</h3>
+                        <p>Warm colors, multi-use furniture, and playful accents for a welcoming family space.</p>
+                        <span class="budget-price">Starting at ₹3.2L</span>
+                    </div>
+                </div>
+                <div class="budget-slide">
+                    <img src="https://i.pinimg.com/736x/63/02/96/6302966dfb3e398fce4868e2bb0ac337.jpg" alt="Elegant Compact Kitchen" class="budget-img" />
+                    <div class="budget-info">
+                        <h3>Elegant Compact Kitchen</h3>
+                        <p>Space-saving modular kitchen with premium finishes and maximum utility for small budgets.</p>
+                        <span class="budget-price">Starting at ₹1.8L</span>
+                    </div>
+                </div>
+                <div class="budget-slide">
+                    <img src="https://i.pinimg.com/736x/96/16/d1/9616d1fd375bafcf679647ceb518fa67.jpg" alt="Smart Studio Setup" class="budget-img" />
+                    <div class="budget-info">
+                        <h3>Smart Studio Setup</h3>
+                        <p>Transform your studio with convertible furniture and chic décor for modern urban living.</p>
+                        <span class="budget-price">Starting at ₹2.1L</span>
+                    </div>
+                </div>
+            </div>
+            <button class="budget-arrow right" id="budgetNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="budget-dots" id="budgetDots">
+            <span class="budget-dot active"></span>
+            <span class="budget-dot"></span>
+            <span class="budget-dot"></span>
+            <span class="budget-dot"></span>
+        </div>
+            <div class="budget-note">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Note: Final pricing may vary after site visit and detailed discussion with our design team.</span>
+            </div>
+        </div>
+    </section>
+             <!-- What We Offer Section -->  
+    <section class="offer-section" style="background:#e0edff;padding:3rem 5% 2.5rem 5%;margin-bottom:0;">
+        <div style="max-width:950px;margin:0 auto;">
+            <h2 style="color:var(--primary);font-size:2.2rem;text-align:center;margin-bottom:2rem;font-weight:700;letter-spacing:0.5px;">
+                What We Offer
+            </h2>
+            <div class="offer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;">
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--primary);"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Turnkey Construction</h3>
+                    <p>End-to-end building solutions, from foundation to finishing, with expert project management.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--secondary);"><i class="fas fa-couch"></i></div>
+                    <h3>Modern Interior Design</h3>
+                    <p>Contemporary, functional interiors tailored to your taste and lifestyle.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--accent);"><i class="fas fa-th-large"></i></div>
+                    <h3>Space Planning</h3>
+                    <p>Smart layouts and optimization for maximum utility and comfort in every square foot.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--primary);"><i class="fas fa-utensils"></i></div>
+                    <h3>Modular Kitchens & Wardrobes</h3>
+                    <p>Custom modular solutions for kitchens and wardrobes, blending style and storage.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--secondary);"><i class="fas fa-tools"></i></div>
+                    <h3>Renovation & Remodeling</h3>
+                    <p>Transform and upgrade your home or office with seamless renovation services.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--accent);"><i class="fas fa-lightbulb"></i></div>
+                    <h3>False Ceiling & Lighting</h3>
+                    <p>Creative ceiling designs and lighting plans for a modern, inviting ambiance.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--primary);"><i class="fas fa-gem"></i></div>
+                    <h3>Premium Materials</h3>
+                    <p>Handpicked, high-quality materials and trusted brands for lasting results.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--secondary);"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Timely Delivery</h3>
+                    <p>On-time project completion with transparent updates at every stage.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon" style="background:var(--accent);"><i class="fas fa-headset"></i></div>
+                    <h3>After-Sales Support</h3>
+                    <p>Continued care and maintenance for your peace of mind, even after handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        /* Enhanced What We Offer Section */
+        .offer-grid {
+            margin-top: 0.5rem;
+        }
+        .offer-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(37,99,235,0.07);
+            padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: box-shadow 0.25s, transform 0.25s;
+            position: relative;
+            min-height: 260px;
+        }
+        .offer-card:hover {
+            box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .offer-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .offer-card h3 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+        .offer-card p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 900px) {
+            .offer-grid {
+                grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+                gap: 1.2rem;
+            }
+            .offer-card {
+                padding: 1.5rem 0.7rem 1.1rem 0.7rem;
+                min-height: 200px;
+            }
+            .offer-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+                margin-bottom: 0.7rem;
+            }
+            .offer-card h3 {
+                font-size: 1rem;
+            }
+            .offer-card p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+    <!-- Why Choose Us Section -->
+     
+    <section class="calculator-section" id="calculator">
+        <div class="section-title">
+            <h2>Project Cost Calculator</h2>
+            <p>Get an instant estimate for your upcoming project. Adjust the parameters to see how different choices affect your budget.</p>
+        </div>
+        <div class="calculator-container">
+            <div class="calculator-tabs">
+                <div class="tab active" data-type="residential">Residential</div>
+                <div class="tab" data-type="commercial">Commercial</div>
+                <div class="tab" data-type="renovation">Renovation</div>
+            </div>
+            <form class="calculator-form" id="costCalculator">
+                <div class="form-group">
+                    <label for="project-type">Project Type</label>
+                    <select id="project-type">
+                        <option value="full-construction">Full Construction</option>
+                        <option value="interior-only">Interior Only</option>
+                        <option value="renovation">Renovation</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="area">Area (sq ft)</label>
+                    <input type="number" id="area" placeholder="Enter area in square feet">
+                </div>
+                <div class="form-group">
+                    <label for="quality">Quality Level</label>
+                    <select id="quality">
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rooms">Number of Rooms</label>
+                    <input type="number" id="rooms" placeholder="Enter number of rooms">
+                </div>
+                <div class="form-group">
+                    <label for="bathrooms">Number of Bathrooms</label>
+                    <input type="number" id="bathrooms" placeholder="Enter number of bathrooms">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location">
+                        <option value="urban">Urban</option>
+                        <option value="suburban">Suburban</option>
+                        <option value="rural">Rural</option>
+                    </select>
+                </div>
+                <div class="calculator-results" id="calcResults">
+                    <div>
+                        <h3>Estimated Project Cost</h3>
+                        <p>This is an approximate calculation based on your inputs</p>
+                    </div>
+                    <div class="result-value" id="resultValue">$45,000 - $65,000</div>
+                </div>
+                <button type="submit" class="cta-button" style="grid-column: span 2;">Get Detailed Quote</button>
+            </form>
+        </div>
+    </section>
+              
+    <section class="section" id="how-we-work">
+    <h2>How We Work & Process</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">✅</div>
+        <h3>1. Consultation</h3>
+        <p>We start with understanding your needs, preferences, and goals through a detailed consultation.</p>
+      </div>
+
+    <div class="card">
+        <div class="icon">✅</div>
+        <h3>2. Site Measurement</h3>
+        <p>We start with understanding your needs, preferences, and goals through a detailed consultation.</p>
+      </div>
+
+
+      <div class="card">
+        <div class="icon">✅</div>
+        <h3>3. Concept Design</h3>
+        <p>Our team crafts a personalized concept tailored to your space, lifestyle, and vision.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✅</div>
+        <h3>4. Planning & Budgeting</h3>
+        <p>Transparent planning and budgeting ensure you know exactly what you're getting and when.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✅</div>
+        <h3>5. Execution</h3>
+        <p>We bring your vision to life with expert craftsmanship, precise execution, and regular updates.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✅</div>
+        <h3>6. Handover</h3>
+        <p>We deliver the final space with quality checks, walkthroughs, and your full satisfaction.</p>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-title">
+            <h2>What Our Clients Say</h2>
+            <p>Real stories from people who transformed their spaces with us</p>
+        </div>
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonial active">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"LuxSpace made our dream home a reality. The attention to detail and professionalism was outstanding!"</p>
+                <div class="author">- Priya S., Bangalore</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"From design to execution, the team exceeded our expectations. Highly recommended for commercial interiors."</p>
+                <div class="author">- Rahul M., Hyderabad</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Our renovation was smooth and stress-free. The results were beyond what we imagined!"</p>
+                <div class="author">- Anjali K., Pune</div>
+            </div>
+            <div class="carousel-controls" id="carouselDots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Our Partners -->
+  <section id="our-partners">
+    <h2>Our Partners</h2>
+    <div class="slider-container">
+      <div class="slider-track">
+        <!-- Replace src with your actual partner logo URLs -->
+        <img src="https://via.placeholder.com/200x100?text=Partner+1" alt="Partner 1" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+2" alt="Partner 2" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+3" alt="Partner 3" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+4" alt="Partner 4" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+5" alt="Partner 5" />
+        <!-- Duplicate logos to enable looping -->
+        <img src="https://via.placeholder.com/200x100?text=Partner+1" alt="Partner 1" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+2" alt="Partner 2" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+3" alt="Partner 3" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+4" alt="Partner 4" />
+        <img src="https://via.placeholder.com/200x100?text=Partner+5" alt="Partner 5" />
+      </div>
+    </div>
+  </section>
+
+     <!-- Section 3: About Us -->
+  <section id="about-us">
+    <h2>About Us</h2>
+    <div class="about">
+      <h3>Who We Are</h3>
+      <p>
+        We are Remodelers Nepal – a passionate team of designers, architects, and builders dedicated to transforming spaces into functional works of art. 
+        With a foundation in modern design and practicality, we specialize in commercial and residential interiors that elevate everyday living.
+      </p>
+
+      <h3>What We Do</h3>
+      <p>
+        From initial concept to final execution, we provide end-to-end solutions: space planning, design, 3D visualization, project management, construction, and turnkey handovers.
+        Our approach blends creativity with structure, ensuring spaces reflect identity and purpose.
+      </p>
+
+      <h3>Our Impact</h3>
+      <p>
+        We believe great design isn’t just visual – it’s transformative. We help small businesses stand out, make homes more liveable, and support entrepreneurs by making world-class interiors affordable and accessible. Our mission is to reshape spaces and empower communities, one project at a time.
+      </p>
+    </div>
+  </section>
+
+    <section class="services-section" id="services">
+        <div class="section-title">
+            <h2>Our Comprehensive Services</h2>
+            <p>We offer end-to-end solutions for all your construction and interior design needs</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('service1.jpg');"></div>
+                <div class="service-content">
+                    <h3>Complete Construction</h3>
+                    <p>From foundation to finishing, we handle all aspects of building your dream space with precision and care.</p>
+                    <a href="#" class="cta-button" style="display: inline-block;">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('service2.jpg');"></div>
+                <div class="service-content">
+                    <h3>Interior Design</h3>
+                    <p>Custom interior solutions that reflect your personality while maximizing functionality and aesthetics.</p>
+                    <a href="#" class="cta-button" style="display: inline-block;">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('service3.jpg');"></div>
+                <div class="service-content">
+                    <h3>Renovation & Remodeling</h3>
+                    <p>Transform your existing space with our expert renovation services that breathe new life into your property.</p>
+                    <a href="#" class="cta-button" style="display: inline-block;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>remodelersnepal</h3>
+                <p>Creating beautiful, functional spaces that stand the test of time through innovative design and exceptional craftsmanship.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <a href="#">Residential Construction</a>
+                <a href="#">Commercial Interiors</a>
+                <a href="#">Home Renovation</a>
+                <a href="#">Space Planning</a>
+                <a href="#">Custom Furniture</a>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Our Team</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Design Ave, Creative City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> hello@luxspace.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 LuxSpace Interiors. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- UI/Feature Scripts -->
+    <script>
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 60) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+
+        // Calculator Tabs & Calculation
+        const tabs = document.querySelectorAll('.calculator-tabs .tab');
+        const projectType = document.getElementById('project-type');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                // Optionally, change project type dropdown based on tab
+                if (this.dataset.type === 'residential') {
+                    projectType.value = 'full-construction';
+                } else if (this.dataset.type === 'commercial') {
+                    projectType.value = 'interior-only';
+                } else {
+                    projectType.value = 'renovation';
+                }
+            });
+        });
+
+        // Calculator logic
+        function formatCurrency(num) {
+            return num.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+        }
+        const calcForm = document.getElementById('costCalculator');
+        const resultValue = document.getElementById('resultValue');
+        const calcResults = document.getElementById('calcResults');
+        calcForm.addEventListener('input', function() {
+            calculateEstimate();
+        });
+        calcForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            calcResults.classList.add('animated');
+            setTimeout(()=>calcResults.classList.remove('animated'), 700);
+
+            // Collect form data
+            const area = document.getElementById('area').value;
+            const rooms = document.getElementById('rooms').value;
+            const bathrooms = document.getElementById('bathrooms').value;
+            const quality = document.getElementById('quality').value;
+            const location = document.getElementById('location').value;
+            const type = projectType.value;
+            const estimate = resultValue.textContent;
+
+            // Enhanced PDF using jsPDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Colors and styles
+            const primary = "#2563eb";
+            const secondary = "#38bdf8";
+            const accent = "#60a5fa";
+            const dark = "#0f172a";
+
+            // Header
+            doc.setFillColor(37, 99, 235); // primary
+            doc.rect(0, 0, 210, 25, 'F');
+            doc.setFontSize(20);
+            doc.setTextColor(255,255,255);
+            doc.text("Project Cost Estimate", 105, 16, { align: "center" });
+
+            // Section box
+            doc.setDrawColor(56, 189, 248); // secondary
+            doc.setLineWidth(0.8);
+            doc.roundedRect(10, 32, 190, 80, 5, 5);
+
+            // Labels and values
+            doc.setFontSize(12);
+            doc.setTextColor(15,23,42); // dark
+            let y = 42;
+            const lineGap = 11;
+            doc.setFont(undefined, "bold");
+            doc.text("Project Type:", 18, y);
+            doc.text("Area (sq ft):", 18, y+=lineGap);
+            doc.text("Rooms:", 18, y+=lineGap);
+            doc.text("Bathrooms:", 18, y+=lineGap);
+            doc.text("Quality:", 18, y+=lineGap);
+            doc.text("Location:", 18, y+=lineGap);
+
+            y = 42;
+            doc.setFont(undefined, "normal");
+            doc.text(type, 60, y);
+            doc.text(area, 60, y+=lineGap);
+            doc.text(rooms, 60, y+=lineGap);
+            doc.text(bathrooms, 60, y+=lineGap);
+            doc.text(quality, 60, y+=lineGap);
+            doc.text(location, 60, y+=lineGap);
+
+            // Estimate box
+            doc.setFillColor(224,237,255); // light blue
+            doc.roundedRect(10, 120, 190, 28, 5, 5, 'F');
+            doc.setFontSize(15);
+            doc.setTextColor(37,99,235); // primary
+            doc.setFont(undefined, "bold");
+            doc.text("Estimated Cost:", 18, 137);
+            doc.setTextColor(56,189,248); // secondary
+            doc.setFontSize(18);
+            doc.text(estimate, 70, 137);
+
+            // Footer
+            doc.setFontSize(10);
+            doc.setTextColor(120,120,120);
+            doc.setFont(undefined, "normal");
+            doc.text("This is an auto-generated estimate. Final pricing may vary after site visit and discussion.", 105, 170, {align:"center"});
+            doc.setDrawColor(224,237,255);
+            doc.line(10, 175, 200, 175);
+            doc.setFontSize(9);
+            doc.text("Remodelers Nepal | www.remodelersnepal.com", 105, 182, {align:"center"});
+
+            doc.save("Project-Estimate.pdf");
+            // Optionally, show a modal or send data
+            // alert('Thank you! Our team will contact you soon with a detailed quote.');
+        });
+        function calculateEstimate() {
+            const area = parseFloat(document.getElementById('area').value) || 0;
+            const rooms = parseInt(document.getElementById('rooms').value) || 1;
+            const bathrooms = parseInt(document.getElementById('bathrooms').value) || 1;
+            const quality = document.getElementById('quality').value;
+            const location = document.getElementById('location').value;
+            const type = projectType.value;
+
+            // Simple cost logic
+            let baseRate = 1800;
+            if (type === 'interior-only') baseRate = 1200;
+            if (type === 'renovation') baseRate = 900;
+            if (type === 'custom') baseRate = 2000;
+            if (quality === 'premium') baseRate *= 1.25;
+            if (quality === 'luxury') baseRate *= 1.5;
+            if (location === 'urban') baseRate *= 1.1;
+            if (location === 'rural') baseRate *= 0.9;
+
+            let minCost = Math.round(area * baseRate * 0.95 + (rooms+bathrooms)*15000);
+            let maxCost = Math.round(area * baseRate * 1.08 + (rooms+bathrooms)*25000);
+
+            if (!area || area < 100) {
+                resultValue.textContent = "Enter valid area";
+            } else {
+                resultValue.textContent = formatCurrency(minCost) + " - " + formatCurrency(maxCost);
+            }
+        }
+
+        // Testimonials Carousel
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentTestimonial = 0;
+        function showTestimonial(idx) {
+            testimonials.forEach((t,i)=> {
+                t.classList.toggle('active', i===idx);
+                dots[i].classList.toggle('active', i===idx);
+            });
+            currentTestimonial = idx;
+        }
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', ()=>showTestimonial(idx));
+        });
+        setInterval(()=>{
+            showTestimonial((currentTestimonial+1)%testimonials.length);
+        }, 6000);
+
+        // Animate service cards on scroll
+        function revealOnScroll() {
+            const cards = document.querySelectorAll('.service-card');
+            const trigger = window.innerHeight * 0.85;
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < trigger) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+        // Budget Interior Carousel
+        const budgetSlides = document.querySelectorAll('.budget-slide');
+        const budgetDots = document.querySelectorAll('.budget-dot');
+        const budgetPrev = document.getElementById('budgetPrev');
+        const budgetNext = document.getElementById('budgetNext');
+        let budgetCurrent = 0;
+        function showBudgetSlide(idx) {
+            budgetSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === idx);
+                budgetDots[i].classList.toggle('active', i === idx);
+            });
+            budgetCurrent = idx;
+        }
+        budgetPrev.addEventListener('click', () => {
+            let idx = (budgetCurrent - 1 + budgetSlides.length) % budgetSlides.length;
+            showBudgetSlide(idx);
+        });
+        budgetNext.addEventListener('click', () => {
+            let idx = (budgetCurrent + 1) % budgetSlides.length;
+            showBudgetSlide(idx);
+        });
+        budgetDots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => showBudgetSlide(idx));
+        });
+        let budgetAuto = setInterval(() => {
+            showBudgetSlide((budgetCurrent + 1) % budgetSlides.length);
+        }, 7000);
+        ['mouseenter', 'focusin'].forEach(evt => {
+            document.getElementById('budgetCarousel').addEventListener(evt, () => clearInterval(budgetAuto));
+        });
+        ['mouseleave', 'focusout'].forEach(evt => {
+            document.getElementById('budgetCarousel').addEventListener(evt, () => {
+                budgetAuto = setInterval(() => {
+                    showBudgetSlide((budgetCurrent + 1) % budgetSlides.length);
+                }, 7000);
+            });
+        });
+
+        // Hamburger menu for mobile
+        const hamburger = document.getElementById('hamburgerMenu');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            document.body.classList.toggle('nav-open');
+        });
+        hamburger.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                hamburger.click();
+            }
+        });
+        // Close nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        });
+        // Optional: close nav on outside click
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900 && navLinks.classList.contains('open')) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                }
+            }
+        });
+
+        // Prevent body scroll when nav is open (mobile)
+        const observer = new MutationObserver(() => {
+            if (document.body.classList.contains('nav-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+        // Budget Image Modal
+        document.querySelectorAll('.budget-img').forEach(img => {
+            img.style.cursor = "zoom-in";
+            img.addEventListener('click', function() {
+                var modal = document.getElementById('budgetImgModal');
+                var modalImg = document.getElementById('budgetImgModalImg');
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                modal.style.display = 'flex';
+            });
+        });
+        document.getElementById('budgetImgModalClose').onclick = function() {
+            document.getElementById('budgetImgModal').style.display = 'none';
+        };
+        document.getElementById('budgetImgModal').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                document.getElementById('budgetImgModal').style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- Full Image Modal -->
+    <div id="budgetImgModal" style="display:none;position:fixed;z-index:3000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+        <span id="budgetImgModalClose" style="position:absolute;top:18px;right:28px;font-size:2.5rem;color:#fff;cursor:pointer;z-index:3100;">&times;</span>
+        <img id="budgetImgModalImg" src="" alt="Full View" style="max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);background:#fff;">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
