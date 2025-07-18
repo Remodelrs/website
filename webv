@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Interiors | Premium Home Design Solutions</title>
+    <style>
+        :root {
+            --primary: #3a4f6a;
+            --secondary: #f8b400;
+            --light: #f4f5f7;
+            --dark: #1e2833;
+            --text: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(58, 79, 106, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Announcements */
+        .announcements {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .announcement-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .announcement-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .announcement-content {
+            padding: 20px;
+        }
+        
+        .announcement-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .offer-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Budget Interiors */
+        .budget-interiors {
+            padding: 80px 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pricing-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .pricing-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            padding: 20px;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .price-note {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* What We Offer */
+        .offerings {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .offerings-list {
+            list-style: none;
+        }
+        
+        .offerings-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        
+        .offerings-list li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Benefits */
+        .benefits {
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefits-list li:before {
+            content: "★";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Calculator */
+        .calculator {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .calculator-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        /* Process */
+        .process {
+            padding: 80px 0;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 20%;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid,
+            .testimonial-grid,
+            .announcement-grid,
+            .pricing-grid,
+            .offerings-grid,
+            .benefits-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Space With Elegant Interiors</h1>
+                <p>We create beautiful, functional spaces tailored to your style and budget. Let us bring your vision to life.</p>
+                <a href="#calculator" class="btn">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Elegant Interiors</h2>
+                <p>We're committed to excellence in every project we undertake</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>10 Years Warranty</h3>
+                    <p>Our work comes with a comprehensive 10-year warranty for your peace of mind.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Customized Design</h3>
+                    <p>Every space is unique - we create designs tailored specifically to your taste and needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Cost</h3>
+                    <p>Premium quality doesn't have to break the bank. We offer competitive pricing without compromising on quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from homeowners who trusted us with their spaces</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Elegant Interiors completely transformed our outdated living room into a modern, functional space. Their attention to detail and creative solutions exceeded our expectations.</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J." class="client-img">
+                        <div>
+                            <div class="client-name">Sarah Johnson</div>
+                            <div>Homeowner, 3BHK Apartment</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>From the initial consultation to the final reveal, the team was professional, responsive, and truly understood our vision. Our kitchen renovation was completed on time and on budget.</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="client-img">
+                        <div>
+                            <div class="client-name">Michael Thompson</div>
+                            <div>Kitchen Renovation Project</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Announcements -->
+    <section class="announcements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Announcements & Offers</h2>
+                <p>Don't miss out on these special opportunities</p>
+            </div>
+            <div class="announcement-grid">
+                <div class="announcement-card">
+                    <img src="https://images.unsplash.com/photo-1583845112203-4540d00ce963" alt="Summer Sale" class="announcement-img">
+                    <div class="announcement-content">
+                        <h3>Summer Renovation Sale</h3>
+                        <p>Book your project this summer and enjoy 15% off on all interior packages.</p>
+                        <span class="offer-tag">Limited Time Offer</span>
+                    </div>
+                </div>
+                <div class="announcement-card">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f" alt="Free Consultation" class="announcement-img">
+                    <div class="announcement-content">
+                        <h3>Free Design Consultation</h3>
+                        <p>Schedule your complimentary 60-minute design session with our experts.</p>
+                        <span class="offer-tag">New Clients Only</span>
+                    </div>
+                </div>
+                <div class="announcement-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Referral Program" class="announcement-img">
+                    <div class="announcement-content">
+                        <h3>Referral Bonus Program</h3>
+                        <p>Refer a friend and both get $200 credit towards your next project.</p>
+                        <span class="offer-tag">Ongoing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Budget Interiors -->
+<section class="budget-interiors">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Budget Interior Projects</h2>
+            <p>Beautiful transformations at accessible price points</p>
+        </div>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Modern Living Room">
+                    <div class="price-badge">$6,200</div>
+                </div>
+                <div class="project-details">
+                    <h3>Modern Living Room</h3>
+                    <div class="project-meta">
+                        <span><strong>Size:</strong> 350 sq.ft</span>
+                        <span><strong>Duration:</strong> 3 weeks</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Contemporary design with neutral palette</li>
+                        <li>Custom built-in entertainment unit</li>
+                        <li>Premium fabric sofa set</li>
+                        <li>Energy-efficient LED lighting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1583845112203-4540d00ce963?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Compact Kitchen">
+                    <div class="price-badge">$4,800</div>
+                </div>
+                <div class="project-details">
+                    <h3>Compact Kitchen Makeover</h3>
+                    <div class="project-meta">
+                        <span><strong>Size:</strong> 120 sq.ft</span>
+                        <span><strong>Duration:</strong> 2 weeks</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Space-saving modular design</li>
+                        <li>Durable laminate countertops</li>
+                        <li>Soft-close cabinet mechanisms</li>
+                        <li>Stainless steel appliances included</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cozy Bedroom">
+                    <div class="price-badge">$5,500</div>
+                </div>
+                <div class="project-details">
+                    <h3>Cozy Bedroom Retreat</h3>
+                    <div class="project-meta">
+                        <span><strong>Size:</strong> 250 sq.ft</span>
+                        <span><strong>Duration:</strong> 2.5 weeks</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Warm color scheme with textured walls</li>
+                        <li>Custom wardrobe with mirror doors</li>
+                        <li>Queen-size platform bed</li>
+                        <li>Blackout window treatments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <p class="price-note">*Prices shown are for reference only. Final costs may vary based on material selections, design complexity, and current market rates.</p>
+    </div>
+</section>
+
+<style>
+/* Budget Interiors Styling */
+.budget-interiors {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.price-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary);
+    color: var(--dark);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.project-details {
+    padding: 20px;
+}
+
+.project-details h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.project-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-features li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    padding-left: 20px;
+}
+
+.project-features li:before {
+    content: "•";
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.price-note {
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+</style>
+    
+    <!-- What We Offer -->
+    <section class="offerings">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Comprehensive interior solutions for every space</p>
+            </div>
+            <div class="offerings-grid">
+                <div>
+                    <ul class="offerings-list">
+                        <li>Complete residential interior design</li>
+                        <li>Space planning and optimization</li>
+                        <li>Custom furniture design and fabrication</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="offerings-list">
+                        <li>Lighting design and installation</li>
+                        <li>Material and finish selection</li>
+                        <li>Project management from concept to completion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>The Elegant Interiors difference</p>
+            </div>
+            <div class="benefits-grid">
+                <div>
+                    <ul class="benefits-list">
+                        <li>Experienced designers with 15+ years in the industry</li>
+                        <li>Transparent pricing with no hidden costs</li>
+                        <li>Quality craftsmanship with attention to detail</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="benefits-list">
+                        <li>On-time project delivery guaranteed</li>
+                        <li>Dedicated project manager for each client</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calculator -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cost Estimator</h2>
+                <p>Get an approximate cost for your project</p>
+            </div>
+            <div class="calculator-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="space-type">Space Type</label>
+                        <select id="space-type" class="form-control">
+                            <option value="living">Living Room</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="office">Home Office</option>
+                            <option value="full">Full Home</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="space-size">Space Size (sq.ft)</label>
+                        <input type="number" id="space-size" class="form-control" min="100" max="5000" value="500">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="package">Package Level</label>
+                        <select id="package" class="form-control">
+                            <option value="basic">Basic</option>
+                            <option value="premium" selected>Premium</option>
+                            <option value="luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <select id="timeline" class="form-control">
+                            <option value="standard">Standard (8-12 weeks)</option>
+                            <option value="expedited">Expedited (+20% fee)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn" style="width: 100%;" onclick="calculateCost()">Calculate Estimated Cost</button>
+                <div id="result" class="result" style="display: none;">
+                    Estimated Cost: <span id="estimated-cost">$0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>Simple steps to your dream space</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision, needs, and budget in a free initial consultation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our designers create customized plans and 3D renderings for your approval.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Material Selection</h3>
+                    <p>You choose from our curated selection of materials, finishes, and furnishings.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Implementation</h3>
+                    <p>Our skilled craftsmen bring the design to life with precision and care.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Reveal</h3>
+                    <p>We present your transformed space and ensure complete satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Elegant Interiors</h3>
+                    <p>Transforming spaces, creating homes. Premium interior design services since 2010.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Residential Design</a></li>
+                        <li><a href="#">Space Planning</a></li>
+                        <li><a href="#">Custom Furniture</a></li>
+                        <li><a href="#">Renovations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>123 Design Avenue</li>
+                        <li>Creative City, CC 10101</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Email: info@elegantinteriors.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Elegant Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function calculateCost() {
+            const spaceType = document.getElementById('space-type').value;
+            const spaceSize = parseInt(document.getElementById('space-size').value);
+            const packageLevel = document.getElementById('package').value;
+            const timeline = document.getElementById('timeline').value;
+            
+            // Base rates per sq.ft
+            let baseRate;
+            switch(packageLevel) {
+                case 'basic':
+                    baseRate = 12;
+                    break;
+                case 'premium':
+                    baseRate = 20;
+                    break;
+                case 'luxury':
+                    baseRate = 30;
+                    break;
+                default:
+                    baseRate = 20;
+            }
+            
+            // Adjust for space type
+            let typeMultiplier = 1;
+            if (spaceType === 'kitchen' || spaceType === 'bathroom') {
+                typeMultiplier = 1.3; // More expensive per sq.ft
+            } else if (spaceType === 'full') {
+                typeMultiplier = 0.9; // Discount for whole home
+            }
+            
+            // Calculate base cost
+            let cost = baseRate * spaceSize * typeMultiplier;
+            
+            // Adjust for timeline
+            if (timeline === 'expedited') {
+                cost *= 1.2;
+            }
+            
+            // Minimum cost
+            cost = Math.max(cost, 2000);
+            
+            // Display result
+            document.getElementById('estimated-cost').textContent = '$' + Math.round(cost).toLocaleString();
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
